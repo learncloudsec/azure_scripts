@@ -1,0 +1,10 @@
+example
+file
+one
+password
+per
+line
+be
+careful
+and
+encrypt
