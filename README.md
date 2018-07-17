@@ -1,5 +1,7 @@
-# Some scripts to help with the management of Azure.
-Initially these are PowerShell, though Azure CLI may follow.
+# Scripts for Azure management
+These are all PowerShell scripts, though Azure CLI may follow.
+To use PowerShell to manage Azure, the AzureRM module should be in place. See guide.
+https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.4.0
 
 ## Usage
 ### ResetAzureADPasswords.ps1
