@@ -7,6 +7,6 @@ $passes = Get-Content -Path .\azure_passes.txt
 For ($i=0; $i -lt 16; $i++) {
     $thisuser = $($users | Select-Object -index $i)
     $thissecurepass = ConvertTo-SecureString $($passes | Select-Object -index $i) -asplaintext -force
-    echo "Setting password for $thisuser"
+    Write-Output "Setting password for $thisuser"
     Get-AzureRmADUser -DisplayName $thisuser | Update-AzureRmADUser -Password $thissecurepass
     }

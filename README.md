@@ -1,11 +1,18 @@
 # Some scripts to help with the management of Azure.
 Initially these are PowerShell, though Azure CLI may follow.
 
-To use them, populate 'azure_users' with desired users, and
-'azure_passes' with desired creds. Be very careful with these
-files.
-
+## Usage
+### ResetAzureADPasswords.ps1
 Reset Passwords changes all user passwords as specified in the
-text files. Create and destroy resource groups makes the groups
-with appropriate permissions, and allows automated wiping at the 
-end of the lab.
+text files. To use: -
+
+Populate 'azure_users' with desired users. These users should already exist in AzureAD - this script does not create users.
+Populate 'azure_passes' with desired passwords. These passes may need to meet complexity requirements.
+Be very careful with these files.
+
+### CreateResourceGroups.ps1
+Creates resource groups named after (existing) AzureAD users names in 'azure_users.txt'. It sets each user as 'Contributer' of the resource group named after them.
+It tags all resource groups to aid with management.
+
+### DestroyResourceGroups.ps1
+Destroys all *tagged* resource groups - this is intended to limit the scope of this script to only the groups created by the above resource group. 
